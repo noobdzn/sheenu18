@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Comic+Neue:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 300 100% 4%;
+    --foreground: 300 100% 95%;
+
+    --card: 280 60% 12%;
+    --card-foreground: 300 100% 95%;
+
+    --popover: 280 60% 12%;
+    --popover-foreground: 300 100% 95%;
+
+    --primary: 320 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 100% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 280 40% 18%;
+    --muted-foreground: 300 30% 70%;
+
+    --accent: 50 100% 55%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 280 40% 25%;
+    --input: 280 40% 20%;
+    --ring: 320 100% 60%;
+
+    --radius: 1rem;
+
+    --neon-pink: 320 100% 60%;
+    --neon-purple: 270 100% 65%;
+    --party-yellow: 50 100% 55%;
+    --chaos-cyan: 180 100% 55%;
+
+    --font-display: 'Bungee Shade', cursive;
+    --font-header: 'Bungee', cursive;
+    --font-comic: 'Comic Neue', cursive;
+    --font-body: 'Poppins', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-header {
+    font-family: var(--font-header);
+  }
+  .font-comic {
+    font-family: var(--font-comic);
+  }
+
+  .text-glow-pink {
+    text-shadow: 0 0 10px hsl(320 100% 60% / 0.8), 0 0 40px hsl(320 100% 60% / 0.4), 0 0 80px hsl(320 100% 60% / 0.2);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 10px hsl(270 100% 65% / 0.8), 0 0 40px hsl(270 100% 65% / 0.4);
+  }
+
+  .text-glow-yellow {
+    text-shadow: 0 0 10px hsl(50 100% 55% / 0.8), 0 0 40px hsl(50 100% 55% / 0.4);
+  }
+
+  .gradient-chaos {
+    background: linear-gradient(135deg, hsl(320 100% 60%), hsl(270 100% 65%), hsl(50 100% 55%), hsl(180 100% 55%));
+  }
+
+  .gradient-pink-purple {
+    background: linear-gradient(135deg, hsl(320 100% 60%), hsl(270 100% 65%));
+  }
+
+  .bg-glitter {
+    background-image: 
+      radial-gradient(circle at 20% 50%, hsl(320 100% 60% / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(270 100% 65% / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 50% 80%, hsl(50 100% 55% / 0.1) 0%, transparent 50%);
+  }
+
+  .border-neon {
+    border: 2px solid hsl(320 100% 60%);
+    box-shadow: 0 0 10px hsl(320 100% 60% / 0.5), inset 0 0 10px hsl(320 100% 60% / 0.1);
+  }
+
+  .shadow-neon-pink {
+    box-shadow: 0 0 15px hsl(320 100% 60% / 0.5), 0 0 45px hsl(320 100% 60% / 0.2);
+  }
+
+  .shadow-neon-purple {
+    box-shadow: 0 0 15px hsl(270 100% 65% / 0.5), 0 0 45px hsl(270 100% 65% / 0.2);
+  }
+}
+
+@keyframes float-emoji {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-20vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes rainbow-border {
+  0% { border-color: hsl(320 100% 60%); }
+  33% { border-color: hsl(270 100% 65%); }
+  66% { border-color: hsl(50 100% 55%); }
+  100% { border-color: hsl(320 100% 60%); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+.animate-rainbow-border {
+  animation: rainbow-border 2s linear infinite;
+}
