@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 
-// These paths match your public/images/ folder and the GitHub subfolder setup
+// Updated paths to match your NEW repository name: /sheenu18/
 const PHOTOS = [
-  { url: "/chingchonggupta/images/1.jpeg", caption: "Ice Cream Hogger 💀", rotate: -3 },
-  { url: "/chingchonggupta/images/2.jpeg", caption: "Caught in 4K 📸", rotate: 2 },
-  { url: "/chingchonggupta/images/3.jpeg", caption: "More hogging💀", rotate: -1 },
-  { url: "/chingchonggupta/images/4.jpeg", caption: "Paani puri hogger", rotate: 4 },
-  { url: "/chingchonggupta/images/5.jpeg", caption: "Main character energy ✨", rotate: -2 },
-  { url: "/chingchonggupta/images/6.jpeg", caption: "The signature goofy pose 🤪", rotate: 3 },
+  { url: "/sheenu18/images/1.jpeg", caption: "Ice Cream Hogger 💀", rotate: -3 },
+  { url: "/sheenu18/images/2.jpeg", caption: "Caught in 4K 📸", rotate: 2 },
+  { url: "/sheenu18/images/3.jpeg", caption: "More hogging💀", rotate: -1 },
+  { url: "/sheenu18/images/4.jpeg", caption: "Paani puri hogger", rotate: 4 },
+  { url: "/sheenu18/images/5.jpeg", caption: "Main character energy ✨", rotate: -2 },
+  { url: "/sheenu18/images/6.jpeg", caption: "The signature goofy pose 🤪", rotate: 3 },
 ];
 
 const GoofGallery = () => {
@@ -42,9 +42,10 @@ const GoofGallery = () => {
                 src={item.url} 
                 alt={item.caption} 
                 className="w-full h-full object-cover"
+                loading="lazy"
                 onError={(e) => {
-                  // If the image fails (typo or wrong extension), show a placeholder
-                  (e.target as HTMLImageElement).src = "https://via.placeholder.com/400?text=Check+File+Extension";
+                  // If image fails, hide it instead of showing a broken placeholder
+                  (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
             </div>
